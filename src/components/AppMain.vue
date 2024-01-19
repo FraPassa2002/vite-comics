@@ -1,5 +1,5 @@
 <script>
-    // import SingleProduct from './SingleProduct.vue';
+    import SingleProduct from './SingleProduct.vue';
 
 
     export default {
@@ -104,9 +104,9 @@
 ]
             };
         },
-        //  components: {
-        //     SingleProduct
-        //  }
+        components: {
+           SingleProduct
+        }
     }
 </script>
 
@@ -124,16 +124,7 @@
                     </div>
 
                     <div class="products-container" >
-                        <div class="single-product" v-for="(comic, i) in comics">
-                            <div>
-                                <img :src="comic.thumb" :alt="comic.series">
-                            </div>
-                            <div>
-                                <p>
-                                    {{ comic.series }}
-                                </p>
-                            </div>
-                        </div>
+                        <SingleProduct v-for="(comic, i) in comics" :key="i" :product="comic"/>                        
                     </div>
                 </div>
             </div>
@@ -214,32 +205,6 @@
 </template>
 
 <style lang="scss" scoped>
-.single-product {
-    padding: 30px;
-    width: calc(100% / 5);
-    transition-duration: 0.3s;
-
-    &:hover {
-        transform: scale(1.1);
-        cursor: pointer;
-    }
-
-    > div:first-child {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 15px;
-        overflow: hidden;
-
-        img {
-            height: 100%;
-            object-fit:fill;
-        }
-    }
-
-    >div:last-child > * {
-        text-transform: uppercase;
-    }
-}
 
 .products-container {
     display: flex;

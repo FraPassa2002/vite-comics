@@ -5,7 +5,7 @@ export default {
             elements: [
                 {
                     name: 'CHARACTERS',
-                    visible: true,
+                    visible: false,
                 },
                 {
                     name: 'COMICS',
@@ -13,35 +13,35 @@ export default {
                 },
                 {
                     name: 'MOVIES',
-                    visible: true,
+                    visible: false,
                 },
                 {
                     name: 'TV',
-                    visible: true,
+                    visible: false,
                 },
                 {
                     name: 'GAMES',
-                    visible: true,
+                    visible: false,
                 },
                 {
                     name: 'COLLECTIBLES',
-                    visible: true,
+                    visible: false,
                 },
                 {
                     name: 'VIDEOS',
-                    visible: true,
+                    visible: false,
                 },
                 {
                     name: 'FANS',
-                    visible: true,
+                    visible: false,
                 },
                 {
                     name: 'NEWS',
-                    visible: true,
+                    visible: false,
                 },
                 {
                     name: 'SHOP',
-                    visible: true,
+                    visible: false,
                 },
             ],
         };
@@ -60,8 +60,8 @@ export default {
             </div>
         
             <ul>
-                <li v-for="(element, i) in elements">
-                    <a href="#">
+                <li v-for="(element, i) in elements" :key="i ">
+                    <a href="#" :class="{'active': element.visible}">
                         {{ element.name }}
                     </a>
                 </li>
